@@ -72,10 +72,6 @@ console.log(arr);
 
 
 //7  
-//Создать функцию, которая принимает произвольное (любое) число массивов и удаляет из каждого массива 
-//первый элемент, а возвращает массив из оставшихся значений: 
-//changeCollection([1,2,3], [‘a’, ’b’, ‘c’]) → [ [2,3], [‘b’, ‘c’] ], 
-//changeCollection([1,2,3]) → [ [2,3] ] и т.д.
 
    function arrays() {
        let newArr = [];
@@ -100,33 +96,28 @@ console.log(res2);
 
 
 let usersArray = [
-    {name: 'Kate',
-        age: 28,
-        gender: 'female'
-    },
-    {
-        name: 'Alex',
-        age: 30,
-        gender: 'male'
-    },
-    {
-        name: 'Olha',
-        age: 17,
-        gender: 'female'
-    },
-    {
-        name: "Vova",
-        age: 29,
-        gender: 'male'
-    }];
-    
-function users(usersArray) {
-  var nameLengths = users.map(function(user) {
-  return user.gender;
-});
-}
+        {name: 'Kate',
+            age:'28',
+            gender: 'female'
+        },
+        {
+            name: 'Alex',
+            age:'30',
+            gender: 'male'
+        },
+        {
+            name: 'Olha',
+            age:'17',
+            gender: 'female'
+        },
+        {
+            name: "Vovan",
+            age: '29',
+            gender: 'male'
+        }];
 
-
-    
-    let result = users();
-    console.log(result);
+    let isValid=function(data){
+        return (data.gender=='male' && data.name.length>0  && data.age.length>0);
+    };
+    let valids = usersArray.filter(isValid);
+    console.log(valids);
