@@ -79,11 +79,12 @@ console.log(arr);
 
    function arrays() {
        let newArr = [];
-       for (let i = 0; i <= arguments.length; i++) {
-          newArr = arguments[i];
-          newArr.splice(0, 1)
+       for (let i = 0; i < arguments.length; i++) {
+          arguments[i].splice(0, 1);
+          newArr[i] = arguments[i];
+       }
             return newArr;
-}
+
    }
 let res2 = arrays([1, 7, 9], [5, 4, 0]);
 
@@ -97,3 +98,35 @@ console.log(res2);
 //funcGetUsers(users, “gender”, “male”); // [ {name: “Denis”, age: “29”, gender: “male”} , 
 //{name: “Ivan”, age: “20”, gender: “male”} ]
 
+
+let usersArray = [
+    {name: 'Kate',
+        age: 28,
+        gender: 'female'
+    },
+    {
+        name: 'Alex',
+        age: 30,
+        gender: 'male'
+    },
+    {
+        name: 'Olha',
+        age: 17,
+        gender: 'female'
+    },
+    {
+        name: "Vova",
+        age: 29,
+        gender: 'male'
+    }];
+    
+function users(usersArray) {
+  var nameLengths = users.map(function(user) {
+  return user.gender;
+});
+}
+
+
+    
+    let result = users();
+    console.log(result);
