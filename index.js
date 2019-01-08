@@ -1,13 +1,13 @@
-//1     доделать второе условие
+//1    
 function multyply() {
-    if (arguments.length == 0) console.log("enter ur number");
+ if(arguments.length==0) return 0;
     let multyply = 1;
     for (let num of arguments) {
         multyply *= num;
     }
     return multyply;
 }
-const resOfMulty = multyply(3, 6);
+const resOfMulty = multyply(3, 8);
 console.log(resOfMulty);
 
 //2
@@ -31,17 +31,17 @@ let str = getCodeStringFromText("hello");
 console.log(str);
 
 
-//4 доделать switch
-
+//4 
 function guessNumber(num) {
     num = prompt('введите число от 0 до 10', '');
-    if (num < 0 || num > 10) alert("число должно быть от 0 до 10!");
-
     function getRandom() {
         return Math.round(Math.random() * 10);
     }
     let ourNum = getRandom();
-    if (num === ourNum) {
+    
+    if (num < 0 || num > 10 || num == null) {
+        alert("число должно быть от 0 до 10!");
+    } else  if (num === ourNum) {
         console.log("Вы угадали");
     } else {
         console.log("Вы не угадали, ваше число " + num + ", а выпало " + ourNum);
@@ -71,11 +71,23 @@ let arr = doubleArray([0, 9, 6]);
 console.log(arr);
 
 
-//7
+//7  
 //Создать функцию, которая принимает произвольное (любое) число массивов и удаляет из каждого массива 
 //первый элемент, а возвращает массив из оставшихся значений: 
 //changeCollection([1,2,3], [‘a’, ’b’, ‘c’]) → [ [2,3], [‘b’, ‘c’] ], 
 //changeCollection([1,2,3]) → [ [2,3] ] и т.д.
+
+   function arrays() {
+       let newArr = [];
+       for (let i = 0; i <= arguments.length; i++) {
+          newArr = arguments[i];
+          newArr.splice(0, 1)
+            return newArr;
+}
+   }
+let res2 = arrays([1, 7, 9], [5, 4, 0]);
+
+console.log(res2);
 
 //8
 //Создать функцию которая принимает массив пользователей, поле на которое хочу проверить и 
@@ -84,3 +96,4 @@ console.log(arr);
 
 //funcGetUsers(users, “gender”, “male”); // [ {name: “Denis”, age: “29”, gender: “male”} , 
 //{name: “Ivan”, age: “20”, gender: “male”} ]
+
